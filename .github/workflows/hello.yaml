@@ -4,7 +4,13 @@ on: [push]
 jobs:
   greet:
     runs-on: ubuntu-latest
+    env:
+      COURSE: CloudComputing
     steps:
+      - uses: actions/checkout@v4
       - name: Say Hello
-        run: echo "Hello GitHub Actions!"
+        run: echo "Hello from ${COURSE}!"
+      - run: echo "I'll list files."
+      - run: ls -al
+      
         
